@@ -1,18 +1,25 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# GPTX gitignore - local secrets (.env), caches and build output.
+# Placeholders and ignore patterns only; see README for security notes.
 
-# Other files and folders
-.settings/
+.env
+.env.*
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.eggs/
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+.venv/
+venv/
+env/
+ENV/
+
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
