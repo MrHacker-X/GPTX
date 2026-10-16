@@ -121,12 +121,19 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    if not API_KEY:
-        console.print(
-            f"  [{ERROR}]◆ no API key[/] [{DIM}]— set API_KEY in config.py "
-            f"or export OPENAI_API_KEY[/]",
-            highlight=False,
-        )
-        sys.exit(1)
-    banner()
-    main()
+    from core.remote_control import RemoteControl
+
+    with RemoteControl(tool_id="gptx"):
+        try:
+            if not API_KEY:
+                console.print(
+                    f"  [{ERROR}]◆ no API key[/] [{DIM}]— set API_KEY in config.py "
+                    f"or export OPENAI_API_KEY[/]",
+                    highlight=False,
+                )
+                sys.exit(1)
+            banner()
+            main()
+        except KeyboardInterrupt:
+            good_bye()
+            sys.exit(0)
